@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Adre.Controls.StartList.Team.Editor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Adre.Controls.StartList.Team"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280">
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0">Gender</Label>
+        <Label Grid.Row="1" Grid.Column="0">Event</Label>
+        <Label Grid.Row="2" Grid.Column="0">Phase</Label>
+        <Label Grid.Row="3" Grid.Column="0">Start Date &amp; Time</Label>
+        <Label Grid.Row="4" Grid.Column="0">Athlete</Label>
+
+        <Label Grid.Row="0" Grid.Column="2">Match No.</Label>
+        <Label Grid.Row="1" Grid.Column="2">Venue</Label>
+        <Label Grid.Row="2" Grid.Column="2">Arena</Label>
+        <Label Grid.Row="3" Grid.Column="2">Remarks</Label>
+
+        <telerik:RadComboBox Grid.Row="0" Grid.Column="1" Margin="5" ItemsSource="{Binding GenderList}" SelectedItem="{Binding SelectedGender}" Width="200" HorizontalAlignment="Left"></telerik:RadComboBox>
+        <telerik:RadComboBox Grid.Row="1" Grid.Column="1" Margin="5" ItemsSource="{Binding EventList}" SelectedItem="{Binding SelectedEvent}" Width="200" HorizontalAlignment="Left"></telerik:RadComboBox>
+        <telerik:RadComboBox Grid.Row="2" Grid.Column="1" Margin="5" ItemsSource="{Binding PhaseList}" SelectedItem="{Binding SelectedPhase}" Width="200" HorizontalAlignment="Left"></telerik:RadComboBox>
+        <telerik:RadDateTimePicker Grid.Row="3" Grid.Column="1" SelectedValue="{Binding DateTimeStart}" Width="200" Margin="5,0" FontSize="14" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" ></telerik:RadDateTimePicker>
+        <telerik:RadComboBox Grid.Row="4" Grid.Column="1" Margin="5" ItemsSource="{Binding AthleteList}" SelectedItem="{Binding SelectedAthlete}" Width="250" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal"/>
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal"/>
+
+        <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding No}"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Venue}" Width="400"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Arena}"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="3" Width="400" Text="{Binding Remarks}"
+                        MaxLines="3"
+                        Height="100"
+                        TextWrapping="Wrap"
+                        VerticalContentAlignment="Top"
+                        AcceptsReturn="True"></TextBox>
+        <StackPanel Grid.Row="4" Grid.Column="3"  Orientation="Horizontal"/>
+        <StackPanel Grid.Row="5" Grid.Column="3" Orientation="Horizontal"/>
+        <StackPanel Grid.Row="6" Grid.Column="3" Orientation="Horizontal"/>
+    </Grid>
+</UserControl>

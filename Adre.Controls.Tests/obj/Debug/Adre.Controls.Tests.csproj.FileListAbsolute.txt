@@ -1,0 +1,10 @@
+D:\SEAGAME\wushu\sea-wushu\Adre.Controls.Tests\bin\Debug\Adre.Controls.Tests.exe.config
+D:\SEAGAME\wushu\sea-wushu\Adre.Controls.Tests\bin\Debug\Adre.Controls.Tests.exe
+D:\SEAGAME\wushu\sea-wushu\Adre.Controls.Tests\bin\Debug\Adre.Controls.Tests.pdb
+D:\SEAGAME\wushu\sea-wushu\Adre.Controls.Tests\obj\Debug\Adre.Controls.Tests.csprojResolveAssemblyReference.cache
+D:\SEAGAME\wushu\sea-wushu\Adre.Controls.Tests\obj\Debug\App.g.cs
+D:\SEAGAME\wushu\sea-wushu\Adre.Controls.Tests\obj\Debug\Adre.Controls.Tests_MarkupCompile.cache
+D:\SEAGAME\wushu\sea-wushu\Adre.Controls.Tests\obj\Debug\Adre.Controls.Tests.Properties.Resources.resources
+D:\SEAGAME\wushu\sea-wushu\Adre.Controls.Tests\obj\Debug\Adre.Controls.Tests.csproj.GenerateResource.Cache
+D:\SEAGAME\wushu\sea-wushu\Adre.Controls.Tests\obj\Debug\Adre.Controls.Tests.exe
+D:\SEAGAME\wushu\sea-wushu\Adre.Controls.Tests\obj\Debug\Adre.Controls.Tests.pdb
