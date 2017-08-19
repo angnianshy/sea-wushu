@@ -40,15 +40,15 @@
                 <telerik:GridViewDataColumn IsReadOnly="True" Header="Gender" Width="80" DataMemberBinding="{Binding StartListItem.SelectedEvent.Gender}" HeaderTextAlignment="Center" TextAlignment="Center"/>
                 <telerik:GridViewDataColumn IsReadOnly="True" Header="Phase" Width="120" DataMemberBinding="{Binding StartListItem.SelectedPhase.Name}"/>
                 <telerik:GridViewDataColumn IsReadOnly="True" Header="Arena" Width="80" DataMemberBinding="{Binding StartListItem.Arena}" TextAlignment="Center"/>
-                <telerik:GridViewDataColumn IsReadOnly="True" Header="Date" Width="150" DataMemberBinding="{Binding StartListItem.DateTimeStart, StringFormat=\{0:dd/MM/yy \}}"/>
-                <telerik:GridViewDataColumn IsReadOnly="True" Header="Time" Width="150" DataMemberBinding="{Binding StartListItem.DateTimeStart, StringFormat=\{0:HH:mm\}}"/>
+                <telerik:GridViewDataColumn IsReadOnly="True" Header="Date" Width="110" DataMemberBinding="{Binding StartListItem.DateTimeStart, StringFormat=\{0:dd/MM/yy \}}"/>
+                <telerik:GridViewDataColumn IsReadOnly="True" Header="Time" Width="80" DataMemberBinding="{Binding StartListItem.DateTimeStart, StringFormat=\{0:HH:mm\}}"/>
                 <telerik:GridViewDataColumn IsReadOnly="True" Header="Athlete(s)" MinWidth="200" DataMemberBinding="{Binding Athlete}" TextAlignment="Left"/>
-                <telerik:GridViewDataColumn Header="QM" Width="120" TextAlignment="Right" DataMemberBinding="{Binding QM}" />
-                <telerik:GridViewDataColumn Header="OB" Width="120" TextAlignment="Right" DataMemberBinding="{Binding OB}" />
-                <telerik:GridViewDataColumn Header="DD" Width="120" TextAlignment="Right" DataMemberBinding="{Binding DD}" />
-                <telerik:GridViewDataColumn Header="Penalty" Width="120" TextAlignment="Right" DataMemberBinding="{Binding Penalty}" />
-                <telerik:GridViewDataColumn IsReadOnly="True" Header="Final Score" Width="120" TextAlignment="Right" DataMemberBinding="{Binding FinalScore}" />
-        <telerik:GridViewDataColumn Header="Medal" Width="300" TextAlignment="Left" DataMemberBinding="{Binding Medal}" />
+                <telerik:GridViewDataColumn Header="QM" Width="80" TextAlignment="Right" DataMemberBinding="{Binding QM}" />
+                <telerik:GridViewDataColumn Header="OB" Width="80" TextAlignment="Right" DataMemberBinding="{Binding OB}" />
+                <telerik:GridViewDataColumn Header="DD" Width="80" TextAlignment="Right" DataMemberBinding="{Binding DD}" />
+                <telerik:GridViewDataColumn Header="Penalty" Width="80" TextAlignment="Right" DataMemberBinding="{Binding Penalty}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Header="Final Score" Width="100" TextAlignment="Right" DataMemberBinding="{Binding FinalScore}" />
+        <telerik:GridViewDataColumn Header="Medal" Width="100" TextAlignment="Left" DataMemberBinding="{Binding Medal}" />
         <telerik:GridViewDataColumn Header="Remarks" Width="300" TextAlignment="Left" DataMemberBinding="{Binding Remarks}" />
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
