@@ -22,7 +22,7 @@ namespace Adre.SEA.Database
         public string PreferredName { get; set; }
 
         public string Gender { get; set; }
-
+        
         public string BibNo { get; set; }
         
         public DateTime? DOB { get; set; }

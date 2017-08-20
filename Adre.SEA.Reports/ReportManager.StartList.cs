@@ -43,17 +43,20 @@ namespace Adre.SEA.Reports
                 dataTable.Columns.Add("AthleteNames");
                 dataTable.Columns.Add("AthleteUCICodes");
                 dataTable.Columns.Add("AthleteRemarks"); //angns
-
+                 
                 var matchesOnSameEvent = ctx.Matches.Where(m => m.Event.Id == @event.Id);
 
                 foreach (var matchOnSameEvent in matchesOnSameEvent)
                 {
-                    var athletes = matchOnSameEvent.Athletes.OrderBy(a => a.PreferredName);
-                    var athleteContingent = athletes.First()?.Contingent.Code ?? "N/A";
-                    var athleteNames = string.Join("\r\n", athletes.Select(a => a.PreferredName));
-                    var athleteRemarks = match?.Remarks ?? "N/A"; //angns     
-                    //dataTable.Rows.Add(matchOnSameEvent.MatchNo, athleteContingent, athleteNames);  //angns
-                    dataTable.Rows.Add(matchOnSameEvent.MatchNo, athleteContingent, athleteNames, athleteRemarks);
+                  var athletes = matchOnSameEvent.Athletes;//.OrderBy(a => a.PreferredName); //angns PreferredName
+                  var athleteContingent = athletes.First()?.Contingent.Code ?? "N/A";
+                  var athleteNames = string.Join("\r\n", athletes.Select(a => a.PreferredName));
+                  var athleteRemarks = match?.Remarks ?? "N/A"; //angns     
+                  //dataTable.Rows.Add(matchOnSameEvent.MatchNo, athleteContingent, athleteNames);  //angns
+                  
+                  dataTable.Rows.Add(matchOnSameEvent.MatchNo, athleteContingent, athleteNames, athleteRemarks);
+                  dataTable.DefaultView.Sort = "MatchNo ASC";
+                  dataTable = dataTable.DefaultView.ToTable();
                 }
 
                 var dataSet = new DataSet();
@@ -61,7 +64,7 @@ namespace Adre.SEA.Reports
                 dataSet.Tables.Add(dataTable);
                 var objectDataSource = new ObjectDataSource { DataSource = dataSet };
                 ((Table)((Report)reportSource.ReportDocument).Items.Find("tableStartList", true).First()).DataSource = objectDataSource;
-
+                             
                 return reportSource;
             }
         }

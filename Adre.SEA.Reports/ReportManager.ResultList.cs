@@ -12,8 +12,10 @@ namespace Adre.SEA.Reports
 {
     public static partial class ReportManager
     {
+
+        public static int i = 0;
         public static InstanceReportSource GenerateResultListOverall(Guid matchId)
-        {
+        {     
             using (var ctx = new ASEAContext())
             {
                 var @match = ctx.Matches.FirstOrDefault(m => m.Id == matchId);
@@ -44,33 +46,46 @@ namespace Adre.SEA.Reports
                 reportSource.Parameters.Add("Gender", eventGender);
 
                 var dataTable = new DataTable();
-
-                dataTable.Columns.Add("Seq");
+                 
+                dataTable.Columns.Add("Seq");   
                 dataTable.Columns.Add("Cont");
                 dataTable.Columns.Add("Name");
                 dataTable.Columns.Add("Time");
                 dataTable.Columns.Add("Remark");
                 dataTable.Columns.Add("Medal");  //angns
 
-                var matchesOnSameEvent = ctx.Matches.Where(m => m.Event.Id == @event.Id);
-
+                var matchesOnSameEvent = ctx.Matches.Where(m => m.Event.Id == @event.Id)
+                                        .OrderByDescending(m => m.Result.FinalScore);
+                 
                 foreach (var matchOnSameEvent in matchesOnSameEvent)
                 {
-                    var result = matchOnSameEvent.Result;
-                    var athletes = matchOnSameEvent.Athletes.OrderBy(a => a.PreferredName);
-                    var athleteContingent = athletes.First()?.Contingent.Code ?? "N/A";
+                    var result = matchOnSameEvent.Result;                  
+                    var athletes = matchOnSameEvent.Athletes;//.OrderBy(a => a.PreferredName);  //angns  
+                    var athleteContingent = athletes.First()?.Contingent.Code ?? "N/A";//athletes.First()?.Contingent.Code ?? "N/A";
                     var athleteName = athletes.First()?.PreferredName ?? "N/A";
+                     
+                    i = i + 1;
+                    //dataTable.Rows.Add(
+                    //    //matchOnSameEvent.MatchNo, //angns
+                    //    "",
+                    //    athleteContingent,
+                    //    athleteName,
+                    //    result?.FinalScore,
+                    //    result?.Remarks,
+                    //    result?.Medal   //angns 
+                    //);
 
                     dataTable.Rows.Add(
-                        matchOnSameEvent.MatchNo,
+                        i.ToString( ),
                         athleteContingent,
-                        athleteName,
+                        athleteName, 
                         result?.FinalScore,
                         result?.Remarks,
-                        result?.Medal   //angns
-                    );
+                        result?.Medal   //angns 
+                    );  
                 }
-
+                i = 0;
+        
                 var dataSet = new DataSet();
 
                 dataSet.Tables.Add(dataTable);
